@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>
+        Project: Google Glass
+    </title>
+    <link rel="stylesheet" type="text/css" href="_css/estilo.css"/>
+    <link rel="stylesheet" type="text/css" href="_css/form.css"/>
+</head>
+<body>
+<script src="_javascript/funcoes.js"> </script>
+<script type="text/javascript">
+    function cal_total(argument) {
+        var qty = parseInt(document.getElementById('cQty').value);
+        tot = qty * 1500;
+        document.getElementById('cTot').value = tot;
+    }
+</script>
+<div id="interface">
+    <header id="cabecalho">
+    
+    <hgroup>
+    <h1> Google Glass </h1>
+    <h2> The technological revolution in a glasses. </h2>
+    </hgroup>
+
+
+<img id="icone" src="_imagens/contato.png"/>
+    
+<nav id="menu">
+    <h1> Main Menu </h1>
+        <ul>    
+            <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/contato.png')"> <a href="index.html"> Home </a> </li> 
+            
+            <li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/contato.png')"> <a href="specs.html"> Specifications </a> </li>
+            
+            <li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/contato.png')"> <a href="fotos.html"> Photos </a> </li>
+            
+            <li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/contato.png')"> <a href="multimidia.html"> Multimedia </a> </li>
+            
+            <li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/contato.png')"> <a href="fale-conosco.html"> Contact us </a> </li>
+        </ul>
+</nav>  
+    
+    </header>
+        <form method="post" id="fContact" action="mailto:giancarlomendes40@gmail.com" oninput="cal_total();">
+            <fieldset id="user"><legend> User ID </legend>
+                <p> <label id="cName"> Name: <input type="text" name="tName" id="cName" size="20" maxlength="30" placeholder="Full name"></p>
+                <p> <label id="cPassword"> Password: <input type="password" name="tPassword" id="cPassword" maxlength="8" placeholder="Max: 8 digits"> </p>
+                <p> <label id="cMail"> E-mail: <input type="email" name="tMail" id="cMail" size="20" maxlength="30" placeholder="example@mail.com"></p>
+                    <fieldset id="sex"><legend> Sex: </legend>
+                        <input type="radio" name="tSex" id="cMasc"> <label for="cMasc"> Masculine </label><br>
+                        <input type="radio" name="tSex" id="cFem"> <label for="cFem"> Feminine </label><br>
+                        <input type="radio" name="tSex" id="cBin"> <label for="cBin"> Non binary </label><br>
+                        <input type="radio" name="tSex" id="cBlan"> <label for="cBlan"> Blank </label>
+    </fieldset>
+       <p> Birth Date:  <input type="date" name="tBir" id="cBir"></p>
+    </fieldset>    
+ 
+    <fieldset id="adress"><legend> User Adress </legend>
+        <p> <label for="cAdress">Adress: <input type="text" name="tAdress" id="cAdress" size="30" placeholder="Street, Avenue..."></p>
+        <p><label for="cNum"> Number: <input type="number" name="tNum" id="cNum" min="0" max="9999"></p> 
+        <p><label for="cState"> State: <input type="text" name="tState" id="cState" size="20" maxlength="20"></p>
+        <p><label for="cCity"> City: <input type="text" name="tCity" id="cCity" size="20" maxlength="20"></p>
+    </fieldset>
+
+    <fieldset id="mensage"><legend> User Mensage </legend>
+        <p><label for="cUrg"> Degree of Urgency: </label>
+            Min <input type="range" name="tUrg" id="cUrg" min="0" max="10"> Max </p>
+       <p><label for="cMsg"> Mensage: </label>
+        <textarea name="tMsg" name="cMsg" placeholder="Leave your mensage here" cols="35" rows="5"> </textarea></p>
+    </fieldset>
+
+    <fieldset id="order"><legend> I want a Google Glass </legend>
+        <p><input type="checkbox" name="tOrd" id="cOrd" checked/> <label for="cOrd"> I would like to purchase a Google Glass when available </label></p>
+        <p><label for="cCol"> Color: </label>
+            <input type="color" name="tCol" id="cCol" value="#000000"></p>
+        <p><label for="cQty"> Quantity: </label>
+            <input type="number" name="tQty" id="cQty" min="0" max="10" value="0"></p> 
+        <p><label for="cTot"> Total Price: U$ </label>
+            <input type="text" name="tTot" id="cTot" placeholder="Total to pay" readonly></p>
+    </fieldset>
+
+    <input type="image" name="tSend" src="_imagens/botao-enviar.png"/>
+</form>
+
+<footer id="rodape">
+<br>    
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+
+<div align="center" class='footer'>
+  <a class="git" href="https://github.com/gianmends/" target="_blank"> <i class="fab fa-github" style='font-size:35px'></i></a>
+</div>
+</footer>
